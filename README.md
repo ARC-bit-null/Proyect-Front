@@ -14,4 +14,4 @@ Una pagina web para almacenar datos y mostrarlos mediante graficas
 ## 📦 Cómo ejecutarlo
 1. Clona el repositorio:
    ```bash
-   git clone [https://github.com/tu-usuario/Proyect-Front.git](https://github.com/tu-usuario/Proyect-Front.git) Mi Proyecto Frontend
+   git clone  [https://github.com/ARC-bit-null/Proyect-Front.git] (https://github.com/ARC-bit-null/Proyect-Front.git) Mi Proyecto Frontend
