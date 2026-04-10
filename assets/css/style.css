@@ -1,3 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --neon-green: #00ff00;
+  --dark-bg: #0d0d0d;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #121212;
@@ -29,11 +38,6 @@ hr {
   margin: 1.5rem 0;
 }
 
-:root {
-  --neon-green: #00ff00;
-  --dark-bg: #0d0d0d;
-}
-
 .cyber-body {
   background-color: var(--dark-bg);
   color: var(--neon-green);
@@ -47,25 +51,64 @@ hr {
 
 .neon-form {
   border: 2px solid var(--neon-green);
-  padding: 2rem;
+  padding: 2.5rem;
   box-shadow: 0 0 15px var(--neon-green);
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  min-width: 350px;
+  max-width: 400px;
+}
+
+.neon-form h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 8px var(--neon-green);
+}
+
+.input-group {
+  margin-bottom: 1.2rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
 }
 
 input {
   background: transparent;
   border: 1px solid var(--neon-green);
   color: var(--neon-green);
-  margin-bottom: 1rem;
-  padding: 10px;
+  padding: 12px;
   display: block;
   width: 100%;
+  outline: none;
+  font-family: inherit;
+}
+
+input:focus {
+  box-shadow: 0 0 8px var(--neon-green);
+}
+
+.btn-neon {
+  background: transparent;
+  color: var(--neon-green);
+  border: 2px solid var(--neon-green);
+  padding: 12px;
+  width: 100%;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 15px;
+  transition: all 0.3s ease;
 }
 
 .btn-neon:hover {
   background: var(--neon-green);
   color: black;
   cursor: pointer;
-  box-shadow: 0 0 25px var(--neon-green);
+  box-shadow: 0 0 20px var(--neon-green);
 }
