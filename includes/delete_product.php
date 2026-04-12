@@ -1,21 +1,41 @@
 <?php
 
-session_start();
+// includes/delete_product.php
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 require_once 'db.php';
 
-// Verificación de seguridad básica
-if (isset($_GET['id']) && isset($_SESSION['username'])) {
-    $id = intval($_GET['id']);
+// Cambiamos a POST para mayor seguridad
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['username'])) {
+    // Validar Token CSRF
+    if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+        die("Error de seguridad: Acción no autorizada.");
+    }
+
+    // Validar y sanitizar el ID
+    $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
+
+    if (!$id) {
+        $_SESSION['flash_error'] = "ID de producto no válido.";
+        header("Location: admin/dashboard.php");
+        exit();
+    }
 
     try {
         $stmt = $pdo->prepare("DELETE FROM productos WHERE id = ?");
         $stmt->execute([$id]);
-        header("Location: ../admin/dashboard.php?deleted=1");
+        // Redirección profesional con mensaje de éxito
+        header("Location: admin/dashboard.php?deleted=1");
         exit();
     } catch (PDOException $e) {
-        die("Error al eliminar el producto: " . $e->getMessage());
+        error_log("Error al eliminar producto ID $id: " . $e->getMessage());
+        die("Error interno al procesar la eliminación.");
     }
 } else {
-    header("Location: ../admin/dashboard.php");
+    // Si intentan acceder por GET o sin sesión, redirigir
+    header("Location: admin/dashboard.php");
     exit();
 }
