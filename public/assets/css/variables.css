@@ -1,0 +1,16 @@
+:root {
+  --bg-main: #0A0A0E;
+  --bg-surface: #1A1A22;
+  --neon-cyan: #00FFCC;
+  --neon-purple: #8A2BE2;
+  --neon-pink: #FF007F;
+  --text-main: #E0E6ED;
+  --text-muted: #9A9A9A;
+  --stock-OK: #00E676;
+  --stock-low: #FFEA00;
+  --stock-out: #FF1744;
+  --font-main: 'Inter', sans-serif;
+  --fs-h1: 32px;
+  --fs-card-title: 18px;
+  --neon-cyan-glow: rgba(0, 255, 204, 0.3);
+}
