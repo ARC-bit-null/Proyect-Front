@@ -1,12 +1,12 @@
 <?php
 
-// includes/delete_product.php
+// actions/delete_product.php
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-require_once 'db.php';
+require_once '../config/db.php';
 
 // Cambiamos a POST para mayor seguridad
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['username'])) {
@@ -20,7 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['username'])) {
 
     if (!$id) {
         $_SESSION['flash_error'] = "ID de producto no válido.";
-        header("Location: admin/dashboard.php");
+         header("Location: /admin/dashboard.php?deleted=1");
+
         exit();
     }
 
@@ -28,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['username'])) {
         $stmt = $pdo->prepare("DELETE FROM productos WHERE id = ?");
         $stmt->execute([$id]);
         // Redirección profesional con mensaje de éxito
-        header("Location: admin/dashboard.php?deleted=1");
+        header("Location: /admin/dashboard.php?deleted=1");
         exit();
     } catch (PDOException $e) {
         error_log("Error al eliminar producto ID $id: " . $e->getMessage());
@@ -36,6 +37,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['username'])) {
     }
 } else {
     // Si intentan acceder por GET o sin sesión, redirigir
-    header("Location: admin/dashboard.php");
     exit();
+    header("Location: /admin/dashboard.php?deleted=1");
 }

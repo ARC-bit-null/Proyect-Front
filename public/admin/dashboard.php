@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-require_once __DIR__ . '/../../includes/db.php';
-require_once __DIR__ . '/../../includes/functions.php';
+require_once __DIR__ . '/../../config/db.php';
+require_once __DIR__ . '/../../core/functions.php';
 
 if (!isset($_SESSION['username'])) {
     header("Location: ../login.php");
@@ -22,6 +22,7 @@ $productos = get_all_products($pdo);
     <link rel="stylesheet" href="../assets/css/components.css">
 </head>
 <body class="admin-layout">
+        <?php include __DIR__ . '/../../includes/admin/header.php'; ?>
     <main class="main-content">
         </main>
 </body>

@@ -1,8 +1,7 @@
 <?php
 session_start();
-// Rutas relativas corregidas para subir 2 niveles desde public/admin/
-require_once __DIR__ . '/../../includes/db.php';
-require_once __DIR__ . '/../../includes/functions.php'; // Para reutilizar consultas
+require_once __DIR__ . '/../../config/db.php';
+require_once __DIR__ . '/../../core/functions.php';
 
 if (!isset($_SESSION['username'])) {
     header("Location: ../login.php");

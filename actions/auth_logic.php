@@ -1,11 +1,11 @@
 <?php
-// includes/auth_logic.php
 
+// actions/auth_logic.php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-require_once 'db.php';
+require_once __DIR__ . '/../config/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // 1. Validar CSRF
@@ -25,18 +25,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($usuario && password_verify($pass, $usuario['password'])) {
             // 2. Prevenir Session Fixation
             session_regenerate_id(true);
-            
+
             $_SESSION['user_id'] = $usuario['id'];
             $_SESSION['username'] = $usuario['username'];
             $_SESSION['rol_id'] = $usuario['rol_id'];
-            
-            // 3. Redirección profesional (relativa a la raíz pública)
-            header("Location: admin/dashboard.php");
+
+            // 3. Redirección
+            header("Location: /login.php");
             exit();
         } else {
             // 4. Flash Message para el login.php
             $_SESSION['flash_error'] = "Credenciales inválidas.";
-            header("Location: login.php");
+            header("Location: /login.php");
             exit();
         }
     } catch (PDOException $e) {
@@ -44,6 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("Error interno en el servidor.");
     }
 } else {
-    header("Location: login.php");
+    header("Location: /login.php");
     exit();
 }
