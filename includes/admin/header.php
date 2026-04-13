@@ -1,27 +1,23 @@
 <header class="main-header">
   <div class="header-container">
-    <a href="/" class="logo">
-    <img src="../public/assets/img/logo-ecommerce.jpg" alt="Logo E-commerce" class="logo-img">
-      <div class="logo-text">
-        <span class="logo-title">E-commerce</span>
-      </div>
-    </a>
+    <h1>ECOM-Command Center</h1>
+    <div class="header-column-2">
+      <form class="header-search" method="get" action="/">
+        <input type="text" id="search" name="q" placeholder="Buscar por nombre, SKU o ID...">
+        <ul class="search-filter">
+          <li>Productos</li>
+          <li>Pedidos</li>
+          <li>Clientes</li>
+        </ul>
+        <button type="submit" class="search-btn">[Lupa]</button>
+      </form>
 
-    <form class="header-search" method="get" action="/">
-        <select name="category" class="search-select">
-        <option value="all">Todos</option>
-        <option value="products">Productos</option>
-        <option value="orders">Pedidos</option>
-        <option value="clients">Clientes</option>
-      </select>
-      <input type="text" id="search" name="q" placeholder="Buscar por nombre, SKU o ID...">
-      <button type="submit" class="search-btn">Buscar</button>
-    </form>
-
-    <div class="header-user">
-      <div class="notification">Notis</div>
-      <div class="user-profile">
-        <div class="profile-pic"></div>
+      <div class="header-user">
+        <div class="notification">[Campana]</div>
+          <div class="user-profile">
+          <span>Alex Chen</span>
+          <div class="profile-pic"></div>
+        </div>
       </div>
     </div>
   </div>

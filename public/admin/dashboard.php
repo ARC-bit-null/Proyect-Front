@@ -16,14 +16,19 @@ $productos = get_all_products($pdo);
 <head>
     <meta charset="UTF-8">
     <title>Dashboard | ARC-bit-null</title>
-    <link rel="stylesheet" href="../assets/css/variables.css">
-    <link rel="stylesheet" href="../assets/css/base.css">
-    <link rel="stylesheet" href="../assets/css/layout.css">
-    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/variables.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/base.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/layout.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/components.css">
 </head>
+
 <body class="admin-layout">
+  <div class="app-container">
+    <?php include __DIR__ . '/../../includes/admin/sidebar.php'; ?>
+
+      <main class="main-content">
         <?php include __DIR__ . '/../../includes/admin/header.php'; ?>
-    <main class="main-content">
-        </main>
+      </main>
+  </div>
 </body>
 </html>
