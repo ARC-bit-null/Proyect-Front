@@ -5,10 +5,9 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-require_once __DIR__ . '/../config/db.php';
+require_once __DIR__ . '/../config/db.php'; // Correcto: sube un nivel y entra a config
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // 1. Validar CSRF
     if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
         error_log("Fallo de CSRF en login detectado.");
         die("Acceso denegado.");
@@ -23,27 +22,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $usuario = $stmt->fetch();
 
         if ($usuario && password_verify($pass, $usuario['password'])) {
-            // 2. Prevenir Session Fixation
             session_regenerate_id(true);
-
             $_SESSION['user_id'] = $usuario['id'];
             $_SESSION['username'] = $usuario['username'];
             $_SESSION['rol_id'] = $usuario['rol_id'];
 
-            // 3. Redirección
-            header("Location: /login.php");
+            header("Location: admin/dashboard.php");
             exit();
         } else {
-            // 4. Flash Message para el login.php
             $_SESSION['flash_error'] = "Credenciales inválidas.";
-            header("Location: /login.php");
+            header("Location: login.php");
             exit();
         }
-    } catch (PDOException $e) {
+    } catch (PDOException $e) { // <--- ASEGÚRATE DE QUE ESTO ESTÉ AQUÍ
         error_log("Error en autenticación: " . $e->getMessage());
         die("Error interno en el servidor.");
     }
-} else {
-    header("Location: /login.php");
-    exit();
 }
