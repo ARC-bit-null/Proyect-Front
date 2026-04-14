@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-require_once __DIR__ . '/../../includes/db.php';
-require_once __DIR__ . '/../../includes/functions.php';
+require_once __DIR__ . '/../../config/db.php';
+require_once __DIR__ . '/../../core/functions.php';
 
 if (!isset($_SESSION['username'])) {
     header("Location: ../login.php");
@@ -16,13 +16,19 @@ $productos = get_all_products($pdo);
 <head>
     <meta charset="UTF-8">
     <title>Dashboard | ARC-bit-null</title>
-    <link rel="stylesheet" href="../assets/css/variables.css">
-    <link rel="stylesheet" href="../assets/css/base.css">
-    <link rel="stylesheet" href="../assets/css/layout.css">
-    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/variables.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/base.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/layout.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/components.css">
 </head>
+
 <body class="admin-layout">
-    <main class="main-content">
-        </main>
+  <div class="app-container">
+    <?php include __DIR__ . '/../../includes/admin/sidebar.php'; ?>
+
+      <main class="main-content">
+        <?php include __DIR__ . '/../../includes/admin/header.php'; ?>
+      </main>
+  </div>
 </body>
 </html>

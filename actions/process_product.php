@@ -1,12 +1,12 @@
 <?php
 
-// includes/process_product.php
+// actions/process_product.php
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-require_once 'db.php';
+require_once '../config/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['username'])) {
     // Validar CSRF

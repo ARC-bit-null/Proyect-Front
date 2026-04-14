@@ -1,0 +1,84 @@
+.app-container {
+  display: flex;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px 30px;
+}
+
+/*--- HEADER (ADMIN)---*/
+.header-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-column-2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*--- Botonn de busqueda ---*/
+.search-filter {
+  display: none;
+}
+
+.header-search {
+  display: flex;
+  align-items: center;
+  background-color: #171f2a;
+  border-radius: 8px;
+  padding: 5px 15px;
+  gap: 10px;
+}
+
+
+#search {
+  background-color: transparent;
+  border: none;
+  color: var(--text-muted);
+  outline: none;
+  width: 250px;
+}
+
+.search-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+/*--- User ---*/
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  background-color: gray;
+  border-radius: 50%;
+}
+
+/*--- SIDEBAR (ADMIN) ---*/
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background-color: var(--bg-surface);
+  padding: 20px 30px;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.menu-list a {
+  display: block;
+  padding: 12px 15px;
+  color: var(--text-muted);
+  text-decoration: none;
+}
