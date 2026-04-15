@@ -5,7 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-require_once __DIR__ . '/../config/db.php'; // Correcto: sube un nivel y entra a config
+require_once __DIR__ . '/../config/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header("Location: login.php");
             exit();
         }
-    } catch (PDOException $e) { // <--- ASEGÚRATE DE QUE ESTO ESTÉ AQUÍ
+    } catch (PDOException $e) {
         error_log("Error en autenticación: " . $e->getMessage());
         die("Error interno en el servidor.");
     }
