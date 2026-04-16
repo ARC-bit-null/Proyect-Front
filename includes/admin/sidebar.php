@@ -5,9 +5,9 @@
   <div class="sidebar">
   <div class="sidebar-header">
       <a href="/" class="logo">
-        <img src="<?php echo BASE_URL; ?>/assets/img/logo_ecommerce_nobg.png" alt="Logo E-commerce" class="logo-img">
+        <img src="<?php echo BASE_URL; ?>/assets/img/isotiponobg.png" alt="Logo E-commerce" class="logo-img">
         <div class="logo-text">
-          <span class="logo-title">E-commerce</span>
+          <span class="logo-title">ECOM</span>
           <span class="sidebar-title">Dashboard</span>
         </div>
       </a>
