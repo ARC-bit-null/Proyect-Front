@@ -10,6 +10,7 @@ if (!isset($_SESSION['username'])) {
 }
 
 $productos = get_all_products($pdo);
+$kpis = get_dashboard_kpis();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -29,6 +30,24 @@ $productos = get_all_products($pdo);
 
       <main class="main-content">
         <?php include __DIR__ . '/../../includes/admin/header.php'; ?>
+        <div class="kpi-grid">
+          <?php foreach ($kpis as $kpi) : ?>
+          
+            <div class="kpi-card" style="--card-color: var(--neon-<?php echo $kpi['ui_theme']; ?>);">
+              
+              <div class="kpi-header">
+              <span class="kpi-title"><?php echo $kpi['title']; ?></span>
+              <i class="fa-solid fa-ellipsis"></i>
+              </div>
+
+              <div class="kpi-body">
+                <span class="kpi-value"><?php echo $kpi['value_formatted']; ?></span>
+              </div>
+
+              <div class="kpi-chart-container"></div>
+            </div>
+          <?php endforeach;?>
+        </div>
       </main>
   </div>
 </body>

@@ -1,0 +1,28 @@
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4 1fr);
+  gap: 20px;
+}
+
+.kpi-card {
+  background-color: var(--bg-glass);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid;
+  border-color: var(--card-color);
+  box-shadow: var(--card-color);
+}
+
+.kpi-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.kpi-title {
+  color: var(--text-main);
+  font-size: var(--fs-h1);
+}
+
+.kpi-value {
+  font-weight: var(--fw-bold);
+}

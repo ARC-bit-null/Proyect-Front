@@ -1,4 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 :root {
+  /* Fonts */
+  --font-main: 'Inter', sans-serif;
+  --fs-h1: 32px;
+  --fs-card-title: 18px;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  /* Colors*/
   --bg-main: #0A0A0E;
   --bg-surface: #1A1A22;
   --neon-cyan: #00FFCC;
@@ -9,8 +23,9 @@
   --stock-OK: #00E676;
   --stock-low: #FFEA00;
   --stock-out: #FF1744;
-  --font-main: 'Inter', sans-serif;
-  --fs-h1: 32px;
-  --fs-card-title: 18px;
   --neon-cyan-glow: rgba(0, 255, 204, 0.3);
+  --neon-purple-glow: rgba(138, 43, 226, 0.3);
+  --neon-pink-glow: rgba(255, 0, 127, 0.3);
+  --bg-glass: rgba(26, 26, 34, 0.7);
+  --border-glass: rgba(224, 230, 237, 0.1);
 }
