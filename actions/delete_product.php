@@ -37,6 +37,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['username'])) {
     }
 } else {
     // Si intentan acceder por GET o sin sesión, redirigir
-    exit();
     header("Location: /admin/dashboard.php?deleted=1");
+    exit();
 }

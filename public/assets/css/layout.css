@@ -13,6 +13,12 @@
   flex-direction: column;
 }
 
+.header-container h1 {
+  font-size: var(--fs-h1);
+  color: var(--text-main);
+  margin-bottom: 25px;
+}
+
 .header-column-2 {
   display: flex;
   justify-content: space-between;
@@ -32,13 +38,12 @@
   gap: 10px;
 }
 
-
 #search {
   background-color: transparent;
   border: none;
   color: var(--text-muted);
   outline: none;
-  width: 250px;
+  width: 200px;
 }
 
 .search-btn {
@@ -46,6 +51,36 @@
   border: none;
   color: var(--text-muted);
   cursor: pointer;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-date {
+  display: flex;
+  align-items: center;
+  background-color: #171f2a;
+  border-radius: 8px;
+  padding: 5px 15px;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.header-date i {
+  color: var(--text-muted);
+}
+
+.date-text {
+  color: var(--text-muted);
 }
 
 /*--- User ---*/
@@ -81,4 +116,28 @@
   padding: 12px 15px;
   color: var(--text-muted);
   text-decoration: none;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
+.menu-list a i {
+  width: 24px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.menu-list a:hover {
+  color: var(--text-main);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-list a.active {
+  color: var(--neon-cyan);
+  border: 1px solid rgba(0, 255, 204, 1);
+  border-left: 2px solid rgba(0, 255, 204, 1);
+  background: linear-gradient(90deg, rgba(0, 255, 204, 0.3) 0%, transparent 50%);
+  box-shadow:
+    0 0 20px rgba(0, 255, 204, 0.2),
+    inset 4px 0 10px rgba(0, 255, 204, 0.2);
 }
