@@ -17,7 +17,7 @@ function get_all_products($pdo)
 
 function get_dashboard_kpis()
 {
-  $kpis = [
+    $kpis = [
     [
         'id'               => 'total_revenue',
         'title'            => 'Total Revenue',
@@ -46,6 +46,6 @@ function get_dashboard_kpis()
         'chart_data'       => [100, 90, 120, 110, 180, 90, 200],
         'ui_theme'         => 'cyan'
     ],
-  ];
-  return $kpis;
+    ];
+    return $kpis;
 }

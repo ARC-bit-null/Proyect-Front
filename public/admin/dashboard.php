@@ -31,9 +31,10 @@ $kpis = get_dashboard_kpis();
       <main class="main-content">
         <?php include __DIR__ . '/../../includes/admin/header.php'; ?>
         <div class="kpi-grid">
-          <?php foreach ($kpis as $kpi) : ?>
-          
-            <div class="kpi-card" style="--card-color: var(--neon-<?php echo $kpi['ui_theme']; ?>);">
+          <?php foreach ($kpis as $kpi) :?>
+            <div class="kpi-card" style="
+            --card-color: var(--neon-<?php echo $kpi['ui_theme']; ?>); 
+            --card-glow: var(--neon-<?php echo $kpi['ui_theme']; ?>-glow);">
               
               <div class="kpi-header">
               <span class="kpi-title"><?php echo $kpi['title']; ?></span>
@@ -44,7 +45,7 @@ $kpis = get_dashboard_kpis();
                 <span class="kpi-value"><?php echo $kpi['value_formatted']; ?></span>
               </div>
 
-              <div class="kpi-chart-container"></div>
+              <div class="kpi-chart-container" data-chart='<?php echo json_encode($kpi["chart_data"]); ?>'></div>
             </div>
           <?php endforeach;?>
         </div>
