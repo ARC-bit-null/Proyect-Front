@@ -18,6 +18,8 @@
   --neon-cyan: #00FFCC;
   --neon-purple: #8A2BE2;
   --neon-pink: #FF007F;
+  --neon-blue: #00BFFF;
+  --neon-orange: #FF9800;
   --text-main: #E0E6ED;
   --text-muted: #9A9A9A;
   --stock-OK: #00E676;
@@ -26,6 +28,8 @@
   --neon-cyan-glow: rgba(0, 255, 204, 0.3);
   --neon-purple-glow: rgba(138, 43, 226, 0.3);
   --neon-pink-glow: rgba(255, 0, 127, 0.3);
+  --neon-blue-glow: rgba(0, 191, 255, 0.3);
+  --neon-orange-glow: rgba(255, 152, 0, 0.3);
   --bg-glass: rgba(26, 26, 34, 0.7);
   --border-glass: rgba(224, 230, 237, 0.1);
 }

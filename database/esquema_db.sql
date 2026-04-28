@@ -65,9 +65,11 @@ CREATE TABLE `productos` (
   PRIMARY KEY (`id`),
   KEY `categoria_id` (`categoria_id`),
   CONSTRAINT `1` FOREIGN KEY (`categoria_id`) REFERENCES `categorias` (`id`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */
 
+--
+-- Dumping data for table `productos`
 --
 -- Dumping data for table `productos`
 --
@@ -76,8 +78,21 @@ SET @OLD_AUTOCOMMIT=@@AUTOCOMMIT, @@AUTOCOMMIT=0;
 LOCK TABLES `productos` WRITE;
 /*!40000 ALTER TABLE `productos` DISABLE KEYS */;
 INSERT INTO `productos` VALUES
-(1,'Teclado Mecánico RGB',NULL,850.00,15,1,NULL,'2026-04-12 01:17:43'),
-(2,'Procesador Ryzen 7',NULL,4500.00,5,2,NULL,'2026-04-12 01:17:43');
+(1,'Corsair Vengeance RGB 32GB DDR5',NULL,189.99,25,2,NULL,'2026-04-12 01:17:43'),
+(2,'Logitech G Pro X Superlight 2',NULL,159.99,42,1,NULL,'2026-04-12 01:17:43'),
+(3,'Asus ROG Zephyrus G14 Laptop',NULL,1499.99,8,2,NULL,'2026-04-13 10:00:00'),
+(4,'Samsung 990 PRO 2TB NVMe SSD',NULL,179.99,30,2,NULL,'2026-04-13 10:30:00'),
+(5,'Keychron Q1 Pro Mechanical Keyboard',NULL,199.99,18,1,NULL,'2026-04-13 11:00:00'),
+(6,'NZXT Kraken Elite 360 RGB',NULL,279.99,15,2,NULL,'2026-04-13 11:30:00'),
+(7,'AMD Ryzen 9 7950X3D Processor',NULL,699.99,12,2,NULL,'2026-04-13 12:00:00'),
+(8,'MSI GeForce RTX 4090 Suprim',NULL,1899.99,5,2,NULL,'2026-04-13 12:30:00'),
+(9,'LG UltraGear 27 OLED 240Hz',NULL,799.99,10,1,NULL,'2026-04-13 13:00:00'),
+(10,'Secretlab Titan Evo Gaming Chair',NULL,549.99,8,1,NULL,'2026-04-13 13:30:00'),
+(11,'Razer Blade 16 Gaming Laptop',NULL,2499.99,4,2,NULL,'2026-04-13 14:00:00'),
+(12,'Sony WH-1000XM5 Headphones',NULL,399.99,22,1,NULL,'2026-04-13 14:30:00'),
+(13,'Crucial P5 Plus 1TB NVMe',NULL,89.99,45,2,NULL,'2026-04-13 15:00:00'),
+(14,'Elgato Stream Deck MK.2',NULL,149.99,30,1,NULL,'2026-04-13 15:30:00'),
+(15,'Seagate FireCuda 530 2TB',NULL,229.99,28,2,NULL,'2026-04-13 16:00:00');
 /*!40000 ALTER TABLE `productos` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -131,7 +146,6 @@ CREATE TABLE `usuarios` (
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`),
   KEY `fk_rol` (`rol_id`),
-  CONSTRAINT `1` FOREIGN KEY (`rol_id`) REFERENCES `tienda_arco`.`roles` (`id`),
   CONSTRAINT `fk_rol` FOREIGN KEY (`rol_id`) REFERENCES `roles` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
