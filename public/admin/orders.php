@@ -3,11 +3,7 @@
 session_start();
 require_once __DIR__ . '/../../config/db.php';
 require_once __DIR__ . '/../../core/functions.php';
-
-if (!isset($_SESSION['username'])) {
-    header("Location: ../login.php");
-    exit();
-}
+require_once __DIR__ . '/../../core/auth_middleware.php';
 
 $productos = get_all_products($pdo);
 ?>

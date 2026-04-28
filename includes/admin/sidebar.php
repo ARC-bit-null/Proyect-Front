@@ -4,7 +4,7 @@
 
   <div class="sidebar">
   <div class="sidebar-header">
-      <a href="/" class="logo">
+      <a href="<?php echo BASE_URL; ?>/admin/dashboard.php" class="logo">
         <img src="<?php echo BASE_URL; ?>/assets/img/isotiponobg.png" alt="Logo E-commerce" class="logo-img">
         <div class="logo-text">
           <span class="logo-title">ECOM</span>

@@ -15,31 +15,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['username'])) {
     }
 
     // Sanitización y Captura de datos
-    $nombre = trim(filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_SPECIAL_CHARS));
+    $nombre = trim(filter_input(INPUT_POST, 'nombre', FILTER_DEFAULT));
     $precio = filter_input(INPUT_POST, 'precio', FILTER_VALIDATE_FLOAT);
     $stock  = filter_input(INPUT_POST, 'stock', FILTER_VALIDATE_INT);
     $categoria_id = filter_input(INPUT_POST, 'categoria_id', FILTER_VALIDATE_INT);
 
-    // Validación básica de negocio
-    if (!$nombre || $precio === false || $stock === false || !$categoria_id) {
-        $_SESSION['flash_error'] = "Todos los campos son obligatorios y deben tener el formato correcto.";
-        header("Location: admin/add_product.php");
+    // Validación de tipos y negocio
+    if (empty($nombre) || strlen($nombre) > 150) {
+        $_SESSION['flash_error'] = "El nombre es obligatorio y debe tener máximo 150 caracteres.";
+        header("Location: " . BASE_URL . "/admin/add_product.php");
+        exit();
+    }
+
+    if ($precio === false || $precio < 0) {
+        $_SESSION['flash_error'] = "El precio debe ser un número válido.";
+        header("Location: " . BASE_URL . "/admin/add_product.php");
+        exit();
+    }
+
+    if ($stock === false || $stock < 0) {
+        $_SESSION['flash_error'] = "El stock debe ser un número entero válido.";
+        header("Location: " . BASE_URL . "/admin/add_product.php");
+        exit();
+    }
+
+    if (!$categoria_id) {
+        $_SESSION['flash_error'] = "Debe seleccionar una categoría.";
+        header("Location: " . BASE_URL . "/admin/add_product.php");
         exit();
     }
 
     try {
         $stmt = $pdo->prepare("INSERT INTO productos (nombre, precio, stock, categoria_id) VALUES (?, ?, ?, ?)");
         $stmt->execute([$nombre, $precio, $stock, $categoria_id]);
-        // Redirección basada en la URL del navegador
-        header("Location: admin/dashboard.php?success=1");
+        header("Location: " . BASE_URL . "/admin/dashboard.php?success=1");
         exit();
     } catch (PDOException $e) {
-        // En producción, logueamos el error y mostramos algo genérico
         error_log("Error al insertar producto: " . $e->getMessage());
         die("Error interno al procesar la solicitud.");
     }
 } else {
-    // Si intentan entrar por URL o no están logueados
-    header("Location: ../login.php");
+    header("Location: " . BASE_URL . "/login.php");
     exit();
 }

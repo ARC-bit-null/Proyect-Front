@@ -27,11 +27,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['username'] = $usuario['username'];
             $_SESSION['rol_id'] = $usuario['rol_id'];
 
-            header("Location: admin/dashboard.php");
+            header("Location: " . BASE_URL . "/admin/dashboard.php");
             exit();
         } else {
             $_SESSION['flash_error'] = "Credenciales inválidas.";
-            header("Location: login.php");
+            header("Location: " . BASE_URL . "/login.php");
             exit();
         }
     } catch (PDOException $e) {
