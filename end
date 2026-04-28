@@ -1,0 +1,52 @@
+* [33med4da90[m[33m ([m[1;31morigin/feature/dashboard[m[33m)[m KPIS Base e intento de CSS flex grid
+[31m|[m *   [33mc18c0cd[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/dashboard[m[33m)[m Merge branch 'feature/dashboard' of https://github.com/franciscoangelreyescortes/Proyect-Front into feature/dashboard
+[31m|[m [32m|[m[31m\[m  
+[31m|[m [32m|[m[31m/[m  
+[31m|[m[31m/[m[32m|[m   
+* [32m|[m [33m3abb80d[m DataBase Pull
+[33m|[m *   [33mda56adf[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m WTF
+[33m|[m [34m|[m[33m\[m  
+[33m|[m [34m|[m[33m/[m  
+[33m|[m[33m/[m[34m|[m   
+* [34m|[m [33m971ac83[m feat[C: Al fin termine el sidebar y el header del dashboard. Aun no tengo JS para hacerlo funcional
+[35m|[m *   [33m87a919b[m Merge pull request #6 from ARC-bit-null/feature/dashboard
+[35m|[m [36m|[m[35m\[m  
+[35m|[m [36m|[m[35m/[m  
+[35m|[m[35m/[m[36m|[m   
+* [36m|[m [33m25ed5c4[m Primer modelado CSS basico para dashboard (Header y sidebar), nuevo enrutamiendo raiz para db.php y hacer rutas absolutas
+* [36m|[m [33maef292e[m Fix: Me pelee una hora con la sintaxis de mrda de php es un fix de mrda
+* [36m|[m [33mfced97b[m refactor: Sigue incompleto, minor fixes, header.php estatico aun, cambios en el README, reestructuracion de carpetas
+* [36m|[m [33me86ad32[m refactor: Incompleto solo para poder pasarme a chambear a la PC
+[1;31m|[m *   [33m0515185[m Merge pull request #5 from ARC-bit-null/feature/dashboard
+[1;31m|[m [1;32m|[m[1;31m\[m  
+[1;31m|[m [1;32m|[m[1;31m/[m  
+[1;31m|[m[1;31m/[m[1;32m|[m   
+* [1;32m|[m [33m4520273[m feat: Parche de seguridad, control de acceso desde navegador public, esqueleto nuevo dashboard (Incompleto)
+[1;33m|[m *   [33mc4b9594[m Merge pull request #4 from ARC-bit-null/feature/products
+[1;33m|[m [1;34m|[m[1;33m\[m  
+[1;33m|[m [1;34m|[m[1;33m/[m  
+[1;33m|[m[1;33m/[m[1;34m|[m   
+* [1;34m|[m [33m187b87b[m[33m ([m[1;31morigin/feature/products[m[33m, [m[1;32mfeature/products[m[33m)[m feat: Agregar/Eliminar productos y cambios en el dashboard
+[1;35m|[m *   [33md654e2d[m Merge pull request #3 from ARC-bit-null/feature/auth
+[1;35m|[m [1;36m|[m[1;35m\[m  
+[1;35m|[m [1;36m|[m[1;35m/[m  
+[1;35m|[m[1;35m/[m[1;36m|[m   
+* [1;36m|[m [33m5055120[m[33m ([m[1;31morigin/feature/auth[m[33m, [m[1;32mfeature/auth[m[33m)[m fix: Parche de seguridad
+[31m|[m *   [33me4e745b[m Merge pull request #2 from ARC-bit-null/feature/auth
+[31m|[m [32m|[m[31m\[m  
+[31m|[m [32m|[m[31m/[m  
+[31m|[m[31m/[m[32m|[m   
+* [32m|[m [33m788e5ca[m feat: CSS del login, redireccion de login.php a dashboard de prueba.
+* [32m|[m [33m624e658[m feat: login system funcional (Solo creds de admin)
+[33m|[m *   [33mcfac8d0[m Merge pull request #1 from ARC-bit-null/feature/css
+[33m|[m [34m|[m[33m\[m  
+[33m|[m [34m|[m[33m/[m  
+[33m|[m[33m/[m[34m|[m   
+* [34m|[m [33m178e748[m[33m ([m[1;31morigin/feature/css[m[33m, [m[1;32mfeature/css[m[33m)[m minor-fix: Cambie un poco del README
+* [34m|[m [33m2d44e4c[m fix: Separe el style.css aparte para mejor organizacion
+[34m|[m[34m/[m  
+* [33m490eb9a[m arreglando un pequeño error
+* [33mf56911f[m feat: actualizar index
+* [33md36e682[m feat: agregar index.html base
+* [33m445cbb6[m solo actualice el contenido del README
+* [33m4eec242[m Agregando README (creo)

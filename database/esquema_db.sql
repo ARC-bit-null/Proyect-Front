@@ -131,7 +131,6 @@ CREATE TABLE `usuarios` (
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`),
   KEY `fk_rol` (`rol_id`),
-  CONSTRAINT `1` FOREIGN KEY (`rol_id`) REFERENCES `tienda_arco`.`roles` (`id`),
   CONSTRAINT `fk_rol` FOREIGN KEY (`rol_id`) REFERENCES `roles` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
